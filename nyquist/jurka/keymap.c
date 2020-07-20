@@ -87,9 +87,10 @@ void eeconfig_init_user(void) {
 #define CZ_QST S(KC_COMM)    // ?
 #define CZ_ASTR ALGR(KC_8)  // *
 #define CZ_COLN S(KC_DOT)   // :
-#define CZ_SCLN KC_GRV  // ;, shifted: °
+#define CZ_SCLN KC_GRV  // ; , shifted: °
 #define CZ_UNDS S(KC_SLSH)  // _
-#define CZ_BSLS S(KC_BSLS) // '
+#define CZ_MARK S(KC_BSLS) // '
+#define CZ_DDOT KC_BSLS // ¨
 
 // Alt Gr-ed characters
 #define CZ_CIRC ALGR(KC_6)  // ^
@@ -211,7 +212,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_JURKA] = LAYOUT( \
-  KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_CAPS, \
+  CZ_DDOT,  KC_LBRC,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_CAPS, \
   KC_TAB,  CZ_Q,    CZ_W,    CZ_F,    CZ_P,    CZ_G,    CZ_J,    CZ_L,    CZ_U,    CZ_Y,    KC_SCLN, KC_DEL, \
   KC_ESC,  CZ_A,    CZ_R,    CZ_S,    CZ_T,    CZ_D,    CZ_H,    CZ_N,    CZ_E,    CZ_I,    CZ_O,    KC_BSPC, \
   KC_LSFT, CZ_Z,    CZ_X,    CZ_C,    CZ_V,    CZ_B,    CZ_K,    CZ_M,    CZ_COMM, CZ_DOT,  CZ_SCLN, CZ_QST, \
@@ -220,7 +221,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* RAISE
  * ,-----------------------------------------------------------------------------------.
- * |      |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  |  ˇ   |
+ * |   ¨  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  |  ˇ   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Tab  |   !  |   @  |   #  |   $  |   %  |   ^  |   &  |   *  |   +  |   -  | Del  |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
@@ -233,10 +234,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_RAISE] = LAYOUT( \
-  KC_NO,   CZ_1,    CZ_2,    CZ_3,    CZ_4,    CZ_5,    CZ_6,    CZ_7,    CZ_8,    CZ_9,    CZ_0,    S(KC_EQL), \
+  CZ_DDOT,   CZ_1,    CZ_2,    CZ_3,    CZ_4,    CZ_5,    CZ_6,    CZ_7,    CZ_8,    CZ_9,    CZ_0,    S(KC_EQL), \
   KC_TAB,  CZ_EXLM, CZ_AT, CZ_HASH,  CZ_DLR,    CZ_PERC,    CZ_CIRC,    CZ_AMPR,    CZ_ASTR,    CZ_PLUS,    CZ_MINS,    KC_DEL, \
-  KC_ESC,  KC_NO,    CZ_LABK,    CZ_LCBR,    CZ_LBRC,    CZ_LPRN,    CZ_RPRN,    CZ_RBRC,    CZ_RCBR,    CZ_RABK,    CZ_UNDS,    KC_BSPC, \
-  KC_LSFT, CZ_BSLS, CZ_DQOT,    CZ_ZV,    CZ_SLSH,    CZ_TILD,    KC_NO,    KC_NO,    KC_COMM,    KC_DOT,    CZ_SCLN,    CZ_QST, \
+  KC_ESC,  CZ_EQL,    CZ_LABK,    CZ_LCBR,    CZ_LBRC,    CZ_LPRN,    CZ_RPRN,    CZ_RBRC,    CZ_RCBR,    CZ_RABK,    CZ_UNDS,    KC_BSPC, \
+  KC_LSFT, CZ_MARK, CZ_DQOT,    KC_NUBS,    CZ_SLSH,    CZ_TILD,    KC_NO,    KC_NO,    KC_COMM,    KC_DOT,    CZ_SCLN,    CZ_QST, \
   ADJUST,  KC_LCTL, KC_LALT, KC_LGUI, JURKA,   KC_ENT,  KC_SPC,  KC_NO,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT \
 ),
 
