@@ -69,7 +69,7 @@ void eeconfig_init_user(void) {
 #define CZ_DOT KC_DOT
 #define CZ_COMM KC_COMM
 
-#define CZ_PLUS KC_EQL   // + and * and ~
+#define CZ_PLUS KC_PPLS   // +
 #define CZ_QOT KC_MINS   // Single quote
 #define CZ_MINS KC_SLSH  // - and _
 
@@ -79,7 +79,7 @@ void eeconfig_init_user(void) {
 #define CZ_HASH ALGR(KC_3)    // #
 #define CZ_DLR ALGR(KC_4)      // $
 #define CZ_PERC ALGR(KC_5)     // %
-#define CZ_AMPR S(KC_7)     // &
+#define CZ_AMPR ALGR(KC_7)     // &
 #define CZ_SLSH KC_PSLS     // /
 #define CZ_LPRN S(KC_RBRC)  // (
 #define CZ_RPRN KC_RBRC     // ) 
@@ -187,7 +187,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * | Shift|      |      |      |      |      |      |      |      | PGDN | PGUP |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |Adjust| Ctrl | Alt  | Linux| NIC  |Enter |Space | RAISE| Left | Down |  Up  |Right |
+ * | Ctrl | Alt  |Adjust| Linux| NIC  |Enter |Space | RAISE| Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT( \
@@ -195,7 +195,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_F7,  KC_F8,    KC_F9,    KC_F10,    KC_F11,  KC_F12,    KC_PSCR,    KC_NO,    KC_NO,    KC_NO,    KC_VOLD,    KC_VOLU, \
   KC_CAPS,  KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_HOME,    KC_END,    KC_NO,    KC_NO,    KC_NO,    KC_NO, KC_NO, \
   KC_LSFT, KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO, KC_PGDN,  KC_PGUP, KC_NO , \
-  ADJUST,  KC_LCTL, KC_LALT, KC_LGUI, KC_NO,   KC_ENT,  KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT \
+  KC_LCTL, KC_LALT, ADJUST, KC_LGUI, KC_NO,   KC_ENT,  KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT \
 ),
 
 /* JURKA
@@ -229,7 +229,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * | Shift|   '  |  "   |   \   |  /  |   ~  |      |      |  ,   |  .   |  ;   |  ?   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |Adjust| Ctrl | Alt  | Linux| JURKA|Enter |Space | NIC  | Left | Down |  Up  |Right |
+ * | Ctrl | Alt  |Adjust| Linux| JURKA|Enter |Space | NIC  | Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
 
@@ -238,7 +238,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,  CZ_EXLM, CZ_AT, CZ_HASH,  CZ_DLR,    CZ_PERC,    CZ_CIRC,    CZ_AMPR,    CZ_ASTR,    CZ_PLUS,    CZ_MINS,    KC_DEL, \
   KC_ESC,  CZ_EQL,    CZ_LABK,    CZ_LCBR,    CZ_LBRC,    CZ_LPRN,    CZ_RPRN,    CZ_RBRC,    CZ_RCBR,    CZ_RABK,    CZ_UNDS,    KC_BSPC, \
   KC_LSFT, CZ_MARK, CZ_DQOT,    KC_NUBS,    CZ_SLSH,    CZ_TILD,    KC_NO,    KC_NO,    KC_COMM,    KC_DOT,    CZ_SCLN,    CZ_QST, \
-  ADJUST,  KC_LCTL, KC_LALT, KC_LGUI, JURKA,   KC_ENT,  KC_SPC,  KC_NO,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT \
+  KC_LCTL, KC_LALT, ADJUST, KC_LGUI, JURKA,   KC_ENT,  KC_SPC,  KC_NO,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT \
 ),
 
 
