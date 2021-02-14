@@ -1,6 +1,25 @@
+# Compile the keymap
 make keebio/nyquist/rev3:jurka
-  
-sudo dfu-programmer atmega32u4 erase --force;
-sudo dfu-programmer atmega32u4 flash keebio_nyquist_rev3_jurka.hex;
-sudo dfu-programmer atmega32u4 reset;
 
+# Forcing is sometimes not needed here:
+sudo dfu-programmer atmega32u4 erase --force
+
+# Flash the hex
+sudo dfu-programmer atmega32u4 flash keebio_nyquist_rev3_jurka.hex
+
+# Reset the keyboard
+sudo dfu-programmer atmega32u4 reset
+
+# EEPROM RESET GUIDE
+# To reset the eeprom, a clean hex has to be flashed first
+sudo dfu-programmer atmega32u4 flash atmega32u4_eeprom_reset.hex
+
+# Reset the eeprom
+dfu-programmer atmega32u2 flash-eeprom reset.eep --force
+
+# The eeprom is reset now. We can flash our desired hex and the keeb should work.
+
+# BUILDING HEX GUIDE
+# To build the hex keymap file, the rules.mk, config.h and keymap.c 
+# have to be put into a custum folder deep in the keyboard's folder structure.
+# Then, it can be compiled.
