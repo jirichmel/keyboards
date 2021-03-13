@@ -11,11 +11,11 @@ sudo dfu-programmer atmega32u4 flash keebio_nyquist_rev3_jurka.hex
 sudo dfu-programmer atmega32u4 reset
 
 # EEPROM RESET GUIDE
-# To reset the eeprom, a clean hex has to be flashed first
+# To reset the eeprom, a clean hex has to be flashed first (from qmk_firmware folder where I put it into my profile)
 sudo dfu-programmer atmega32u4 flash atmega32u4_eeprom_reset.hex
 
 # Reset the eeprom
-dfu-programmer atmega32u2 flash-eeprom reset.eep --force
+sudo dfu-programmer atmega32u4 flash-eeprom reset.eep # --force
 
 # The eeprom is reset now. We can flash our desired hex and the keeb should work.
 
